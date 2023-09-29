@@ -12,7 +12,8 @@
   "dependencies": {
     "next": "latest",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "styled-components": "^6.0.8"
   },
   "devDependencies": {
     "@types/node": "latest",
@@ -28,5 +29,8 @@
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
+  },
+  "resolutions": {
+    "styled-components": "^5"
   }
 }
