@@ -4,6 +4,7 @@ export interface ContainerStyledProps {
   display?: "flex" | "block" | "inline-block" | "inline-flex";
   gap?: number;
   background?: string;
+  alignItems?: "center" | "flex-start" | "flex-end";
 }
 
 export interface ContainerProps

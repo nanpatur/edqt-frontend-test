@@ -24,6 +24,7 @@ const ContainerStyled = styled.div<ContainerStyledProps>`
   gap: ${({ gap }) => gap || "0"}px;
   background-color: ${({ background, theme }) =>
     background || theme.colors.white};
+  align-items: ${({ alignItems }) => alignItems || "none"};
 `;
 
 export default ContainerStyled;
