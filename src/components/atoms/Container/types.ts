@@ -3,6 +3,7 @@ export interface ContainerStyledProps {
   shadow?: "none" | "sm" | "md" | "lg";
   display?: "flex" | "block" | "inline-block" | "inline-flex";
   gap?: number;
+  background?: string;
 }
 
 export interface ContainerProps

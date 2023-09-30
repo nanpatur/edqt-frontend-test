@@ -3,7 +3,6 @@ import { ContainerStyledProps } from "./types";
 
 const ContainerStyled = styled.div<ContainerStyledProps>`
   width: 100%;
-  max-width: 1200px;
   margin: 0 auto;
   padding: ${({ padding }) =>
     Array.isArray(padding)
@@ -23,6 +22,8 @@ const ContainerStyled = styled.div<ContainerStyledProps>`
   }};
   display: ${({ display }) => display || "block"};
   gap: ${({ gap }) => gap || "0"}px;
+  background-color: ${({ background, theme }) =>
+    background || theme.colors.white};
 `;
 
 export default ContainerStyled;
