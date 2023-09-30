@@ -1,4 +1,4 @@
-import TypographyStyled from "./styled";
+import { TypographyStyled } from "./styled";
 import { TypographyProps } from "./types";
 
 const Typography: React.FC<TypographyProps> = ({ children, ...props }) => {

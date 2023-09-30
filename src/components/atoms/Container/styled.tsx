@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { ContainerStyledProps } from "./types";
 
-const ContainerStyled = styled.div<ContainerStyledProps>`
+export const ContainerStyled = styled.div<ContainerStyledProps>`
   width: 100%;
   margin: 0 auto;
   padding: ${({ padding }) =>
@@ -25,6 +25,5 @@ const ContainerStyled = styled.div<ContainerStyledProps>`
   background-color: ${({ background, theme }) =>
     background || theme.colors.white};
   align-items: ${({ alignItems }) => alignItems || "none"};
+  flex-direction: ${({ flexDirection }) => flexDirection || "row"};
 `;
-
-export default ContainerStyled;

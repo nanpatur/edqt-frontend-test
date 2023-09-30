@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { TypographyStyledProps } from "./types";
 
-const TypographyStyled = styled.span<TypographyStyledProps>`
+export const TypographyStyled = styled.span<TypographyStyledProps>`
   font-family: ${({ fontFamily }) => fontFamily}, sans-serif;
   font-size: ${({ size }) => `${size}px` || "16px"};
   font-weight: ${({ weight }) => weight || 500};
@@ -10,5 +10,3 @@ const TypographyStyled = styled.span<TypographyStyledProps>`
   line-height: "24px";
   letter-spacing: "0.5%";
 `;
-
-export default TypographyStyled;

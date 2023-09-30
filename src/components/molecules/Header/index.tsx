@@ -10,7 +10,7 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ title, withBack }) => {
   return (
-    <Container padding={[24, 40]} shadow="lg" display="inline-flex" gap={24}>
+    <Container padding={[24, 40]} shadow="lg" display="flex" gap={24}>
       {withBack && (
         <>
           <IconLink href={withBack} icon="left-arrow" size={24} />
