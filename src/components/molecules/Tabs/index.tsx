@@ -1,7 +1,8 @@
 import Container from "@/components/atoms/Container";
 import { TabsProps } from "./types";
 import { useState } from "react";
-import { TabLabelContainerStyled, TabLabelStyled } from "./styled";
+import { TabLabelContainerStyled, TabLabelItemContainerStyled } from "./styled";
+import Typography from "@/components/atoms/Typography";
 
 const Tabs: React.FC<TabsProps> = ({ defaultActiveKey, items, onChange }) => {
   const [activeKey, setActiveKey] = useState(defaultActiveKey);
@@ -10,19 +11,22 @@ const Tabs: React.FC<TabsProps> = ({ defaultActiveKey, items, onChange }) => {
     <Container>
       <TabLabelContainerStyled $display="flex">
         {items.map((item) => (
-          <TabLabelStyled
+          <TabLabelItemContainerStyled
             key={item.key}
-            $size={16}
-            $weight={500}
-            $color={item.key === activeKey ? "purple" : "black"}
             onClick={() => {
               setActiveKey(item.key);
               onChange && onChange(item.key);
             }}
-            $isActive={item.key === activeKey}
+            $isActive
           >
-            {item.label}
-          </TabLabelStyled>
+            <Typography
+              $size={16}
+              $weight={500}
+              $color={item.key === activeKey ? "purple" : "black"}
+            >
+              {item.label}
+            </Typography>
+          </TabLabelItemContainerStyled>
         ))}
       </TabLabelContainerStyled>
       <Container>

@@ -15,6 +15,8 @@ export const useQuery = <T>(
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState("");
 
+  const queryDependency = Array.isArray(key) ? key.join("") : key;
+
   useEffect(() => {
     const fetchData = async () => {
       setIsLoading(true);
@@ -29,7 +31,7 @@ export const useQuery = <T>(
     };
 
     !!config?.enabled && fetchData();
-  }, [config?.enabled, Array.isArray(key) ? key.join("") : key]);
+  }, [config?.enabled, fetchFunction, queryDependency]);
 
   return { data, isLoading, error };
 };

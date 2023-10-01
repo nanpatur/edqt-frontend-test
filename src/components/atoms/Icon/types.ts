@@ -13,6 +13,8 @@ export interface IconStyledProps {
     | "drag-handle"
     | "three-dot-v"
     | "three-dot-h";
+  $cursor?: string;
+  $activeCursor?: string;
 }
 
 export interface IconProps

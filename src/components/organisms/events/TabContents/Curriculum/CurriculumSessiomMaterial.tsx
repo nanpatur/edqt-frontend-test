@@ -19,9 +19,12 @@ const CurriculumSessionMaterial: React.FC<CurriculumSessiomMaterialProps> = ({
   return (
     <MaterialContainer onDragOver={onDragOver} $isDragging={$isDragging}>
       <Container $display="flex" $alignItems="center" $gap={8}>
-        <GrabIcon
+        <Icon
+          className="drag-handle"
           $name="drag-handle"
           $size={24}
+          $cursor="grab"
+          $activeCursor="grabbing"
           onDragStart={onDragStart}
           onDragEnd={onDragEnd}
           draggable={draggable}
@@ -78,15 +81,8 @@ const CurriculumSessionMaterial: React.FC<CurriculumSessiomMaterialProps> = ({
   );
 };
 
-const GrabIcon = styled(Icon)`
-  cursor: grab;
-  :active {
-    cursor: grabbing;
-  }
-`;
-
 const IconBackground = styled.div`
-  $padding: 8px;
+  padding: 8px;
   background-color: ${({ theme }) => theme.colors.frostGray};
   border-radius: 8px;
 `;

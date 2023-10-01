@@ -4,22 +4,8 @@ import CurriculumSession from "./CurriculumSession";
 import { EventCurriculumContentProps } from "./types";
 import { useState } from "react";
 import { Session } from "@/domains/events/models";
-import styled from "styled-components";
 import Button from "@/components/atoms/Button";
 import Icon from "@/components/atoms/Icon";
-
-const DraggableSession = styled.div<any>`
-  position: relative;
-  /* cursor: grab; */
-  transition:
-    transform 0.2s ease-in-out,
-    opacity 0.2s ease-in-out;
-
-  &:active {
-    /* cursor: grabbing; */
-    border: ${({ isDragged }) => (isDragged ? "1px solid red" : "none")};
-  }
-`;
 
 const EventCurriculumTabContent: React.FC<EventCurriculumContentProps> = ({
   event,

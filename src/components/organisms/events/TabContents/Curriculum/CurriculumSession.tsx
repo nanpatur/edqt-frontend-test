@@ -45,9 +45,11 @@ const CurriculumSession: React.FC<CurriculumSessionProps> = ({
       onDragOver={onDragOver}
     >
       <Container $display="flex" $alignItems="center" $gap={8}>
-        <GrabIcon
+        <Icon
           $name="drag-handle"
           $size={24}
+          $cursor="grab"
+          $activeCursor="grabbing"
           onDragStart={onDragStart}
           onDragEnd={onDragEnd}
           draggable={draggable}
@@ -86,12 +88,5 @@ const CurriculumSession: React.FC<CurriculumSessionProps> = ({
     </Card>
   );
 };
-
-const GrabIcon = styled(Icon)`
-  cursor: grab;
-  :active {
-    cursor: grabbing;
-  }
-`;
 
 export default CurriculumSession;

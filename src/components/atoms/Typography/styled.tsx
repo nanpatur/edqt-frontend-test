@@ -7,6 +7,6 @@ export const TypographyStyled = styled.span<TypographyStyledProps>`
   font-weight: ${({ $weight }) => $weight || 500};
   color: ${({ theme, $color }) => theme.colors[$color || "black"]};
   text-align: ${({ $align }) => $align || "left"};
-  line-height: "24px";
-  letter-spacing: "0.5%";
+  line-height: 24px;
+  letter-spacing: 0.5%;
 `;

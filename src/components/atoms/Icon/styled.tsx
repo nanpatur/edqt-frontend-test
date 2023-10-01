@@ -7,4 +7,9 @@ export const IconStyled = styled.div<IconStyledProps>`
   background-image: url(${({ $name }) => `/icons/${$name}.svg`});
   background-size: cover;
   background-repeat: no-repeat;
+  cursor: ${({ $cursor }) => ($cursor ? $cursor : "pointer")};
+  &:active {
+    cursor: ${({ $activeCursor, $cursor }) =>
+      $activeCursor ? $activeCursor : $cursor || "pointer"};
+  }
 `;
