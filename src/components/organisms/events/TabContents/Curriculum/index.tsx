@@ -46,7 +46,12 @@ const EventCurriculumTabContent: React.FC<EventCurriculumContentProps> = ({
   };
 
   return (
-    <Container padding={[32, 0]} display="flex" flexDirection="column" gap={24}>
+    <Container
+      $padding={[32, 0]}
+      display="flex"
+      $flexDirection="column"
+      $gap={24}
+    >
       <CurriculumSchedule schedule={event?.startDate} />
       {sessions.map((session, index) => (
         <CurriculumSession
@@ -56,11 +61,11 @@ const EventCurriculumTabContent: React.FC<EventCurriculumContentProps> = ({
           onDragStart={() => handleDragStart(session)}
           onDragEnd={handleDragEnd}
           draggable
-          isDragging={session.id === draggedSession?.id}
+          $isDragging={session.id === draggedSession?.id}
         />
       ))}
-      <Container display="flex" flexDirection="column" alignItems="flex-end">
-        <Button variant="primary" prefix={<Icon name="plus" size={24} />}>
+      <Container display="flex" $flexDirection="column" $alignItems="flex-end">
+        <Button $variant="primary" prefix={<Icon name="plus" size={24} />}>
           Add Session
         </Button>
       </Container>

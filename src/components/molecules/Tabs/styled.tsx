@@ -7,12 +7,12 @@ export const TabLabelContainerStyled = styled(Container)`
 `;
 
 interface TabLabelStyledProps {
-  isActive: boolean;
+  $isActive: boolean;
 }
 
 export const TabLabelStyled = styled(Typography)<TabLabelStyledProps>`
   cursor: pointer;
-  padding: 0 14px 20px 0;
-  border-bottom: ${({ theme, isActive }) =>
-    isActive ? `2px solid ${theme.colors.purple}` : "none"};
+  $padding: 0 14px 20px 0;
+  border-bottom: ${({ theme, $isActive }) =>
+    $isActive ? `2px solid ${theme.colors.purple}` : "none"};
 `;

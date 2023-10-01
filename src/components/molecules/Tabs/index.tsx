@@ -13,13 +13,13 @@ const Tabs: React.FC<TabsProps> = ({ defaultActiveKey, items, onChange }) => {
           <TabLabelStyled
             key={item.key}
             size={16}
-            weight={500}
+            $weight={500}
             color={item.key === activeKey ? "purple" : "black"}
             onClick={() => {
               setActiveKey(item.key);
               onChange && onChange(item.key);
             }}
-            isActive={item.key === activeKey}
+            $isActive={item.key === activeKey}
           >
             {item.label}
           </TabLabelStyled>

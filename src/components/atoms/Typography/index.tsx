@@ -7,7 +7,7 @@ const Typography: React.FC<TypographyProps> = ({ children, ...props }) => {
 
 Typography.defaultProps = {
   size: 16,
-  weight: "normal",
+  $weight: "normal",
   color: "black",
   fontFamily: "SF Pro Display",
 };

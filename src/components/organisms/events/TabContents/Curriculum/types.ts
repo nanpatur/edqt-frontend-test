@@ -10,7 +10,7 @@ export interface CurriculumSessionProps {
   onDragStart: (e: React.DragEvent<HTMLDivElement>) => void;
   onDragEnd: (e: React.DragEvent<HTMLDivElement>) => void;
   draggable: boolean;
-  isDragging: boolean;
+  $isDragging: boolean;
 }
 
 export interface EventCurriculumContentProps {
@@ -23,5 +23,5 @@ export interface CurriculumSessiomMaterialProps {
   onDragStart: (e: React.DragEvent<HTMLDivElement>) => void;
   onDragEnd: (e: React.DragEvent<HTMLDivElement>) => void;
   draggable: boolean;
-  isDragging: boolean;
+  $isDragging: boolean;
 }

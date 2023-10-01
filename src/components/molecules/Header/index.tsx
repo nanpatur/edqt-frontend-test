@@ -7,11 +7,11 @@ import { HeaderProps } from "./types";
 const Header: React.FC<HeaderProps> = ({ title, withBack }) => {
   return (
     <Container
-      padding={[24, 40]}
-      shadow="lg"
+      $padding={[24, 40]}
+      $shadow="lg"
       display="flex"
-      gap={24}
-      maxWidth="100%"
+      $gap={24}
+      $maxWidth="100%"
     >
       {withBack && (
         <>
@@ -19,7 +19,7 @@ const Header: React.FC<HeaderProps> = ({ title, withBack }) => {
           <Divider direction="vertical" />
         </>
       )}
-      <Typography fontFamily="Poppins" weight={600}>
+      <Typography fontFamily="Poppins" $weight={600}>
         {title}
       </Typography>
     </Container>

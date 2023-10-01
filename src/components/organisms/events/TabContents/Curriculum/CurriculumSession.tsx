@@ -15,7 +15,7 @@ const CurriculumSession: React.FC<CurriculumSessionProps> = ({
   onDragStart,
   onDragEnd,
   draggable,
-  isDragging,
+  $isDragging,
 }) => {
   const [materials, setMaterials] = useState(session?.materials || []);
   const [draggedMaterial, setDraggedMaterial] = useState<Material | null>(null);
@@ -39,8 +39,12 @@ const CurriculumSession: React.FC<CurriculumSessionProps> = ({
   };
 
   return (
-    <Card padding={0} active={isDragging} onDragOver={onDragOver}>
-      <Container display="flex" alignItems="center" gap={8}>
+    <Card
+      $padding={0}
+      $isActive={$isDragging ? true : undefined}
+      onDragOver={onDragOver}
+    >
+      <Container display="flex" $alignItems="center" $gap={8}>
         <GrabIcon
           name="drag-handle"
           size={24}
@@ -48,16 +52,16 @@ const CurriculumSession: React.FC<CurriculumSessionProps> = ({
           onDragEnd={onDragEnd}
           draggable={draggable}
         />
-        <Typography size={24} weight={500}>
+        <Typography size={24} $weight={500}>
           {session?.title}
         </Typography>
         <Icon name="three-dot-h" size={32} style={{ marginLeft: "auto" }} />
       </Container>
       <Container
-        padding={[24, 0, 0, 24]}
+        $padding={[24, 0, 0, 24]}
         display="flex"
-        flexDirection="column"
-        gap={16}
+        $flexDirection="column"
+        $gap={16}
       >
         {materials?.map((material, i) => (
           <CurriculumSessionMaterial
@@ -67,14 +71,14 @@ const CurriculumSession: React.FC<CurriculumSessionProps> = ({
             onDragStart={() => handleDragStart(material)}
             onDragEnd={handleDragEnd}
             draggable
-            isDragging={material.id === draggedMaterial?.id}
+            $isDragging={material.id === draggedMaterial?.id}
           />
         ))}
-        <Container display="flex" alignItems="center" gap={16}>
-          <Button padding={8}>
+        <Container display="flex" $alignItems="center" $gap={16}>
+          <Button $padding={8}>
             <Icon name="plus" size={24} />
           </Button>
-          <Typography size={16} weight={500}>
+          <Typography size={16} $weight={500}>
             Add Lesson Material
           </Typography>
         </Container>
@@ -87,18 +91,6 @@ const GrabIcon = styled(Icon)`
   cursor: grab;
   :active {
     cursor: grabbing;
-  }
-`;
-
-const IconBackground = styled.div`
-  padding: 8px;
-  background-color: ${({ theme }) => theme.colors.frostGray};
-  border-radius: 8px;
-`;
-
-const MaterialContainer = styled(Container)`
-  :hover {
-    background-color: ${({ theme }) => theme.colors.paleGray};
   }
 `;
 

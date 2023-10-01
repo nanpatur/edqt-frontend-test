@@ -1,6 +1,6 @@
 export interface TypographyStyledProps {
   size?: 12 | 14 | 16 | 18 | 20 | 24 | 32;
-  weight?: string | number;
+  $weight?: string | number;
   color?:
     | "purple"
     | "white"

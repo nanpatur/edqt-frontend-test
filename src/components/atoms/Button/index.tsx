@@ -1,20 +1,26 @@
 import { ButtonStyled } from "./styled";
-import { ButtonProps } from "./types";
+import { ButtonProps, ButtonStyledProps } from "./types";
 
-const Button: React.FC<ButtonProps> = (
-  { children, prefix, suffix, ...props } = { variant: "primary" },
-) => {
+const Button: React.FC<ButtonProps> = ({
+  children,
+  prefix,
+  suffix,
+  $variant = "primary",
+  $padding,
+  $disabled,
+}) => {
+  const styledProps: ButtonStyledProps = {
+    $variant,
+    $padding,
+    $disabled,
+  };
   return (
-    <ButtonStyled {...props}>
+    <ButtonStyled {...styledProps}>
       {prefix}
       {children}
       {suffix}
     </ButtonStyled>
   );
-};
-
-Button.defaultProps = {
-  variant: "primary",
 };
 
 export default Button;

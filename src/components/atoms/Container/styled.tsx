@@ -3,14 +3,14 @@ import { ContainerStyledProps } from "./types";
 
 export const ContainerStyled = styled.div<ContainerStyledProps>`
   width: ${({ width }) => width || "100%"};
-  max-width: ${({ maxWidth }) => maxWidth || "1440px"};
+  max-width: ${({ $maxWidth }) => $maxWidth || "1440px"};
   margin: 0 auto;
-  padding: ${({ padding }) =>
-    Array.isArray(padding)
-      ? padding.map((p) => String(p) + "px").join(" ")
-      : `${padding}px` || "0"};
-  box-shadow: ${({ shadow }) => {
-    switch (shadow) {
+  padding: ${({ $padding }) =>
+    Array.isArray($padding)
+      ? $padding.map((p) => String(p) + "px").join(" ")
+      : `${$padding}px` || "0"};
+  box-shadow: ${({ $shadow }) => {
+    switch ($shadow) {
       case "sm":
         return "0px 2px 14px rgba(38.50, 26.27, 73.31, 0.05)";
       case "md":
@@ -22,9 +22,9 @@ export const ContainerStyled = styled.div<ContainerStyledProps>`
     }
   }};
   display: ${({ display }) => display || "block"};
-  gap: ${({ gap }) => gap || "0"}px;
-  background-color: ${({ background, theme }) =>
-    background || theme.colors.white};
-  align-items: ${({ alignItems }) => alignItems || "none"};
-  flex-direction: ${({ flexDirection }) => flexDirection || "row"};
+  gap: ${({ $gap }) => $gap || "0"}px;
+  background-color: ${({ $background, theme }) =>
+    $background || theme.colors.white};
+  align-items: ${({ $alignItems }) => $alignItems || "none"};
+  flex-direction: ${({ $flexDirection }) => $flexDirection || "row"};
 `;

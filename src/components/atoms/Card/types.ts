@@ -1,6 +1,6 @@
 export interface CardStyledProps {
-  padding?: number;
-  active?: boolean;
+  $padding?: number;
+  $isActive?: boolean;
 }
 
 export interface CardProps

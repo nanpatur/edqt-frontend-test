@@ -1,0 +1,193 @@
+[
+  {
+    "id": "1",
+    "title": "Web Development Summit",
+    "startDate": "2023-10-01T08:00:00",
+    "curriculum": {
+      "sessions": [
+        {
+          "id": "s1",
+          "title": "Introduction to HTML",
+          "materials": [
+            {
+              "id": "m1",
+              "title": "HTML Basics",
+              "type": "online",
+              "url": "https://example.com/html-basics",
+              "isRequired": true,
+              "startDate": "2023-10-01T08:00:00",
+              "duration": {
+                "hours": 1,
+                "minutes": 30,
+                "seconds": 0
+              },
+              "isDownloadable": true,
+              "isPreviewable": true
+            },
+            {
+              "id": "m2",
+              "title": "Semantic HTML",
+              "type": "onsite",
+              "url": "https://example.com/semantic-html",
+              "isRequired": true,
+              "startDate": "2023-10-01T09:30:00",
+              "duration": {
+                "hours": 1,
+                "minutes": 30,
+                "seconds": 0
+              },
+              "isDownloadable": true,
+              "isPreviewable": false
+            }
+          ]
+        },
+        {
+          "id": "s2",
+          "title": "CSS Fundamentals",
+          "materials": [
+            {
+              "id": "m11",
+              "title": "CSS Selectors",
+              "type": "onsite",
+              "url": "https://example.com/css-selectors",
+              "isRequired": true,
+              "startDate": "2023-10-02T10:00:00",
+              "duration": {
+                "hours": 1,
+                "minutes": 30,
+                "seconds": 0
+              },
+              "isDownloadable": true,
+              "isPreviewable": false
+            },
+            {
+              "id": "m12",
+              "title": "Box Model",
+              "type": "online",
+              "url": "https://example.com/box-model",
+              "isRequired": true,
+              "startDate": "2023-10-02T11:30:00",
+              "duration": {
+                "hours": 2,
+                "minutes": 0,
+                "seconds": 0
+              },
+              "isDownloadable": false,
+              "isPreviewable": true
+            }
+          ]
+        },
+        {
+          "id": "s3",
+          "title": "JavaScript Essentials",
+          "materials": [
+            {
+              "id": "m21",
+              "title": "JavaScript Basics",
+              "type": "online",
+              "url": "https://example.com/js-basics",
+              "isRequired": true,
+              "startDate": "2023-10-03T08:00:00",
+              "duration": {
+                "hours": 1,
+                "minutes": 30,
+                "seconds": 0
+              },
+              "isDownloadable": false,
+              "isPreviewable": true
+            },
+            {
+              "id": "m22",
+              "title": "DOM Manipulation",
+              "type": "onsite",
+              "url": "https://example.com/dom-manipulation",
+              "isRequired": true,
+              "startDate": "2023-10-03T09:45:00",
+              "duration": {
+                "hours": 1,
+                "minutes": 45,
+                "seconds": 0
+              },
+              "isDownloadable": true,
+              "isPreviewable": false
+            }
+          ]
+        },
+        {
+          "id": "s4",
+          "title": "Responsive Web Design",
+          "materials": [
+            {
+              "id": "m31",
+              "title": "Media Queries",
+              "type": "onsite",
+              "url": "https://example.com/media-queries",
+              "isRequired": true,
+              "startDate": "2023-10-04T14:00:00",
+              "duration": {
+                "hours": 1,
+                "minutes": 30,
+                "seconds": 0
+              },
+              "isDownloadable": true,
+              "isPreviewable": false
+            },
+            {
+              "id": "m32",
+              "title": "Flexbox Layout",
+              "type": "online",
+              "url": "https://example.com/flexbox-layout",
+              "isRequired": true,
+              "startDate": "2023-10-04T16:30:00",
+              "duration": {
+                "hours": 2,
+                "minutes": 0,
+                "seconds": 0
+              },
+              "isDownloadable": true,
+              "isPreviewable": true
+            }
+          ]
+        },
+        {
+          "id": "s5",
+          "title": "Introduction to Frontend Frameworks",
+          "materials": [
+            {
+              "id": "m41",
+              "title": "Vue.js Fundamentals",
+              "type": "onsite",
+              "url": "https://example.com/vuejs-fundamentals",
+              "isRequired": false,
+              "startDate": "2023-10-05T09:30:00",
+              "duration": {
+                "hours": 1,
+                "minutes": 30,
+                "seconds": 0
+              },
+              "isDownloadable": true,
+              "isPreviewable": true
+            },
+            {
+              "id": "m42",
+              "title": "React Basics",
+              "type": "onsite",
+              "url": "https://example.com/react-basics",
+              "isRequired": false,
+              "startDate": "2023-10-05T11:00:00",
+              "duration": {
+                "hours": 1,
+                "minutes": 30,
+                "seconds": 0
+              },
+              "isDownloadable": true,
+              "isPreviewable": false
+            }
+          ]
+        }
+      ]
+    },
+    "updatedAt": "2023-09-28T12:00:00",
+    "createdAt": "2023-09-28T10:30:00"
+  }
+]
