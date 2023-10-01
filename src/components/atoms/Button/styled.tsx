@@ -2,6 +2,9 @@ import styled from "styled-components";
 import { ButtonStyledProps } from "./types";
 
 export const ButtonStyled = styled.button<ButtonStyledProps>`
+  display: flex;
+  align-items: center;
+  gap: 12px;
   background-color: ${(props) =>
     props.variant === "primary" ? props.theme.colors.purple : "transparent"};
   border: ${(props) =>
@@ -17,7 +20,12 @@ export const ButtonStyled = styled.button<ButtonStyledProps>`
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
-  padding: 10px 16px;
   text-align: center;
   cursor: pointer;
+  padding: ${({ padding }) =>
+    !!padding
+      ? Array.isArray(padding)
+        ? padding.map((p) => String(p) + "px").join(" ")
+        : `${padding}px` || "0"
+      : "10px 16px"};
 `;

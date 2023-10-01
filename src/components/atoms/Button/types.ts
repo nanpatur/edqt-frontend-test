@@ -1,5 +1,7 @@
 export interface ButtonStyledProps {
   variant?: "primary" | "secondary";
+  disabled?: boolean;
+  padding?: number;
 }
 
 export interface ButtonProps
@@ -7,5 +9,6 @@ export interface ButtonProps
     ButtonStyledProps {
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
   type?: "button" | "submit" | "reset";
-  disabled?: boolean;
+  prefix?: React.ReactNode;
+  suffix?: React.ReactNode;
 }

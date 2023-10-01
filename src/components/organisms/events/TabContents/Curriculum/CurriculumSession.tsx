@@ -7,6 +7,7 @@ import styled from "styled-components";
 import CurriculumSessionMaterial from "./CurriculumSessiomMaterial";
 import { useState } from "react";
 import { Material } from "@/domains/events/models";
+import Button from "@/components/atoms/Button";
 
 const CurriculumSession: React.FC<CurriculumSessionProps> = ({
   session,
@@ -69,6 +70,14 @@ const CurriculumSession: React.FC<CurriculumSessionProps> = ({
             isDragging={material.id === draggedMaterial?.id}
           />
         ))}
+        <Container display="flex" alignItems="center" gap={16}>
+          <Button padding={8}>
+            <Icon name="plus" size={24} />
+          </Button>
+          <Typography size={16} weight={500}>
+            Add Lesson Material
+          </Typography>
+        </Container>
       </Container>
     </Card>
   );

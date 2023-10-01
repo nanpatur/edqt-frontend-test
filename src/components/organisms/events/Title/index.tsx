@@ -2,6 +2,7 @@ import Button from "@/components/atoms/Button";
 import Container from "@/components/atoms/Container";
 import Typography from "@/components/atoms/Typography";
 import { EventTitleProps } from "./types";
+import Icon from "@/components/atoms/Icon";
 
 const EventTitle: React.FC<EventTitleProps> = ({ title, subtitle }) => {
   return (
@@ -14,7 +15,9 @@ const EventTitle: React.FC<EventTitleProps> = ({ title, subtitle }) => {
           {subtitle}
         </Typography>
       </Container>
-      <Button variant="secondary">Preview</Button>
+      <Button variant="secondary" prefix={<Icon name="eye" size={24} />}>
+        Preview
+      </Button>
     </Container>
   );
 };

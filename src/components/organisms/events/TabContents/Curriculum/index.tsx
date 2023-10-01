@@ -6,6 +6,7 @@ import { useState } from "react";
 import { Session } from "@/domains/events/models";
 import styled from "styled-components";
 import Button from "@/components/atoms/Button";
+import Icon from "@/components/atoms/Icon";
 
 const DraggableSession = styled.div<any>`
   position: relative;
@@ -58,6 +59,11 @@ const EventCurriculumTabContent: React.FC<EventCurriculumContentProps> = ({
           isDragging={session.id === draggedSession?.id}
         />
       ))}
+      <Container display="flex" flexDirection="column" alignItems="flex-end">
+        <Button variant="primary" prefix={<Icon name="plus" size={24} />}>
+          Add Session
+        </Button>
+      </Container>
     </Container>
   );
 };
