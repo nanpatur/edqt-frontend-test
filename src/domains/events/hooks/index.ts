@@ -1,6 +1,6 @@
 // use hooks query from event service
 
-import { useQuery } from "@/components/lib/query";
+import { useQuery } from "@/lib/query";
 import EventService from "../services";
 
 export const useSetInitialEventData = () => {
