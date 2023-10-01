@@ -6,6 +6,7 @@ import { useState } from "react";
 import { Session } from "@/domains/events/models";
 import Button from "@/components/atoms/Button";
 import Icon from "@/components/atoms/Icon";
+import { generateRandomString } from "@/utils/generateRandomString";
 
 const EventCurriculumTabContent: React.FC<EventCurriculumContentProps> = ({
   event,
@@ -39,6 +40,22 @@ const EventCurriculumTabContent: React.FC<EventCurriculumContentProps> = ({
     setDraggedSession(null);
   };
 
+  const handleAddSession = () => {
+    const newSession: Session = {
+      id: generateRandomString(5),
+      title: "New Session",
+      materials: [],
+    };
+    updateEvent({
+      ...event,
+      curriculum: {
+        ...event.curriculum,
+        sessions: [...sessions, newSession],
+      },
+    });
+    setSessions([...sessions, newSession]);
+  };
+
   return (
     <Container
       $padding={[32, 0]}
@@ -61,7 +78,11 @@ const EventCurriculumTabContent: React.FC<EventCurriculumContentProps> = ({
         />
       ))}
       <Container $display="flex" $flexDirection="column" $alignItems="flex-end">
-        <Button $variant="primary" prefix={<Icon $name="plus" $size={24} />}>
+        <Button
+          $variant="primary"
+          prefix={<Icon $name="plus" $size={24} />}
+          onClick={handleAddSession}
+        >
           Add Session
         </Button>
       </Container>
