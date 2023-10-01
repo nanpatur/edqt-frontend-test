@@ -18,7 +18,7 @@ const CurriculumSessionMaterial: React.FC<CurriculumSessiomMaterialProps> = ({
 
   return (
     <MaterialContainer onDragOver={onDragOver} $isDragging={$isDragging}>
-      <Container display="flex" $alignItems="center" $gap={8}>
+      <Container $display="flex" $alignItems="center" $gap={8}>
         <GrabIcon
           name="drag-handle"
           size={24}
@@ -53,7 +53,7 @@ const CurriculumSessionMaterial: React.FC<CurriculumSessiomMaterialProps> = ({
             </Typography>
           </>
         )}
-        <Container display="flex" width="auto"></Container>
+        <Container $display="flex" $width="auto"></Container>
         <Icon name="time-circle" size={24} />
         <Typography $size={16} $weight={500}>
           {date} | {time}

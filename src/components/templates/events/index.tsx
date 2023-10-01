@@ -31,7 +31,7 @@ const EventTemplate: React.FC<EventTemplateProps> = ({ event }) => {
       <Header title="Event" withBack="/" />
       <Container
         $padding={40}
-        display="flex"
+        $display="flex"
         $flexDirection="column"
         $gap={32}
         $background="transparent"

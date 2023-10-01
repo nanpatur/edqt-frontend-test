@@ -44,7 +44,7 @@ const CurriculumSession: React.FC<CurriculumSessionProps> = ({
       $isActive={$isDragging ? true : undefined}
       onDragOver={onDragOver}
     >
-      <Container display="flex" $alignItems="center" $gap={8}>
+      <Container $display="flex" $alignItems="center" $gap={8}>
         <GrabIcon
           name="drag-handle"
           size={24}
@@ -59,7 +59,7 @@ const CurriculumSession: React.FC<CurriculumSessionProps> = ({
       </Container>
       <Container
         $padding={[24, 0, 0, 24]}
-        display="flex"
+        $display="flex"
         $flexDirection="column"
         $gap={16}
       >
@@ -74,7 +74,7 @@ const CurriculumSession: React.FC<CurriculumSessionProps> = ({
             $isDragging={material.id === draggedMaterial?.id}
           />
         ))}
-        <Container display="flex" $alignItems="center" $gap={16}>
+        <Container $display="flex" $alignItems="center" $gap={16}>
           <Button $padding={8}>
             <Icon name="plus" size={24} />
           </Button>

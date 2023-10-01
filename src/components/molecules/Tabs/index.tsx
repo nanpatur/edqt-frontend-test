@@ -8,13 +8,13 @@ const Tabs: React.FC<TabsProps> = ({ defaultActiveKey, items, onChange }) => {
 
   return (
     <Container>
-      <TabLabelContainerStyled display="flex">
+      <TabLabelContainerStyled $display="flex">
         {items.map((item) => (
           <TabLabelStyled
             key={item.key}
-            size={16}
+            $size={16}
             $weight={500}
-            color={item.key === activeKey ? "purple" : "black"}
+            $color={item.key === activeKey ? "purple" : "black"}
             onClick={() => {
               setActiveKey(item.key);
               onChange && onChange(item.key);

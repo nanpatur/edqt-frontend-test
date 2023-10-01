@@ -10,13 +10,13 @@ export default function Home() {
   return (
     <Container
       $padding={100}
-      display="flex"
+      $display="flex"
       $alignItems="center"
       $flexDirection="column"
       $gap={24}
     >
       <Container
-        display="flex"
+        $display="flex"
         $alignItems="center"
         $gap={8}
         $flexDirection="column"

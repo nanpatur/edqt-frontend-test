@@ -9,7 +9,7 @@ const Header: React.FC<HeaderProps> = ({ title, withBack }) => {
     <Container
       $padding={[24, 40]}
       $shadow="lg"
-      display="flex"
+      $display="flex"
       $gap={24}
       $maxWidth="100%"
     >

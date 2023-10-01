@@ -1,12 +1,12 @@
 export interface ContainerStyledProps {
-  padding?: number | number[];
+  $padding?: number | number[];
   $shadow?: "none" | "sm" | "md" | "lg";
-  display?: "flex" | "block";
+  $display?: "flex" | "block";
   $flexDirection?: "row" | "column";
   $gap?: number;
   $background?: string;
   $alignItems?: "center" | "flex-start" | "flex-end";
-  width?: string;
+  $width?: string;
   $maxWidth?: string;
 }
 

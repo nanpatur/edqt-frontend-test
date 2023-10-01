@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { ContainerStyledProps } from "./types";
 
 export const ContainerStyled = styled.div<ContainerStyledProps>`
-  width: ${({ width }) => width || "100%"};
+  width: ${({ $width }) => $width || "100%"};
   max-width: ${({ $maxWidth }) => $maxWidth || "1440px"};
   margin: 0 auto;
   padding: ${({ $padding }) =>
@@ -21,7 +21,7 @@ export const ContainerStyled = styled.div<ContainerStyledProps>`
         return "none";
     }
   }};
-  display: ${({ display }) => display || "block"};
+  display: ${({ $display }) => $display || "block"};
   gap: ${({ $gap }) => $gap || "0"}px;
   background-color: ${({ $background, theme }) =>
     $background || theme.colors.white};

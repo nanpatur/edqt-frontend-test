@@ -1,6 +1,6 @@
 export interface ButtonStyledProps {
   $variant?: "primary" | "secondary";
-  disabled?: boolean;
+  $disabled?: boolean;
   $padding?: number;
 }
 

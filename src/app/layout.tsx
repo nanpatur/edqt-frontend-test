@@ -1,5 +1,4 @@
 "use client";
-import StyledComponentsRegistry from "@/lib/registry";
 import { myTheme } from "../styles/theme";
 import "./globals.css";
 import { ThemeProvider } from "styled-components";

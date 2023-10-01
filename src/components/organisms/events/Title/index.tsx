@@ -6,8 +6,8 @@ import Icon from "@/components/atoms/Icon";
 
 const EventTitle: React.FC<EventTitleProps> = ({ title, subtitle }) => {
   return (
-    <Container display="flex" $alignItems="center">
-      <Container display="flex" $gap={32} $alignItems="center">
+    <Container $display="flex" $alignItems="center">
+      <Container $display="flex" $gap={32} $alignItems="center">
         <Typography as="h1" $size={32} $weight={500}>
           {title}
         </Typography>

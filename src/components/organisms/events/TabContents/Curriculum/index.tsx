@@ -48,7 +48,7 @@ const EventCurriculumTabContent: React.FC<EventCurriculumContentProps> = ({
   return (
     <Container
       $padding={[32, 0]}
-      display="flex"
+      $display="flex"
       $flexDirection="column"
       $gap={24}
     >
@@ -64,7 +64,7 @@ const EventCurriculumTabContent: React.FC<EventCurriculumContentProps> = ({
           $isDragging={session.id === draggedSession?.id}
         />
       ))}
-      <Container display="flex" $flexDirection="column" $alignItems="flex-end">
+      <Container $display="flex" $flexDirection="column" $alignItems="flex-end">
         <Button $variant="primary" prefix={<Icon name="plus" size={24} />}>
           Add Session
         </Button>
