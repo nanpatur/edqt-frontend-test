@@ -10,7 +10,7 @@ const CurriculumSchedule: React.FC<CurriculumScheduleProps> = ({
 
   return (
     <Card>
-      <Typography size={16} $weight={500}>
+      <Typography $size={16} $weight={500}>
         Event Schedule: {schedule ? `${date}, ${time}` : "-"}
       </Typography>
     </Card>

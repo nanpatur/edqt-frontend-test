@@ -16,10 +16,10 @@ const Header: React.FC<HeaderProps> = ({ title, withBack }) => {
       {withBack && (
         <>
           <IconLink href={withBack} name="left-arrow" size={24} />
-          <Divider direction="vertical" />
+          <Divider $direction="vertical" />
         </>
       )}
-      <Typography fontFamily="Poppins" $weight={600}>
+      <Typography $fontFamily="Poppins" $weight={600}>
         {title}
       </Typography>
     </Container>

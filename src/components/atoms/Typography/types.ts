@@ -1,7 +1,7 @@
 export interface TypographyStyledProps {
-  size?: 12 | 14 | 16 | 18 | 20 | 24 | 32;
+  $size?: 12 | 14 | 16 | 18 | 20 | 24 | 32;
   $weight?: string | number;
-  color?:
+  $color?:
     | "purple"
     | "white"
     | "black"
@@ -9,8 +9,8 @@ export interface TypographyStyledProps {
     | "steelGray"
     | "cloudGray"
     | "frostGray";
-  align?: "left" | "center" | "right";
-  fontFamily?: "SF Pro Display" | "Poppins";
+  $align?: "left" | "center" | "right";
+  $fontFamily?: "SF Pro Display" | "Poppins";
 }
 
 export interface TypographyProps

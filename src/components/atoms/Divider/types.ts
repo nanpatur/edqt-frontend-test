@@ -1,5 +1,5 @@
 export interface DividerStyledProps {
-  direction?: "horizontal" | "vertical";
+  $direction?: "horizontal" | "vertical";
 }
 
 export interface DividerProps extends DividerStyledProps {}

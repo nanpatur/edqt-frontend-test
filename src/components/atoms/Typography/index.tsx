@@ -1,15 +1,21 @@
 import { TypographyStyled } from "./styled";
-import { TypographyProps } from "./types";
+import { TypographyProps, TypographyStyledProps } from "./types";
 
-const Typography: React.FC<TypographyProps> = ({ children, ...props }) => {
-  return <TypographyStyled {...props}>{children}</TypographyStyled>;
-};
+const Typography: React.FC<TypographyProps> = ({
+  children,
+  $size = 16,
+  $weight = "normal",
+  $color = "black",
+  $fontFamily = "SF Pro Display",
+}) => {
+  const styledProps: TypographyStyledProps = {
+    $size,
+    $weight,
+    $color,
+    $fontFamily,
+  };
 
-Typography.defaultProps = {
-  size: 16,
-  $weight: "normal",
-  color: "black",
-  fontFamily: "SF Pro Display",
+  return <TypographyStyled {...styledProps}>{children}</TypographyStyled>;
 };
 
 export default Typography;

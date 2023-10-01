@@ -52,7 +52,7 @@ const CurriculumSession: React.FC<CurriculumSessionProps> = ({
           onDragEnd={onDragEnd}
           draggable={draggable}
         />
-        <Typography size={24} $weight={500}>
+        <Typography $size={24} $weight={500}>
           {session?.title}
         </Typography>
         <Icon name="three-dot-h" size={32} style={{ marginLeft: "auto" }} />
@@ -78,7 +78,7 @@ const CurriculumSession: React.FC<CurriculumSessionProps> = ({
           <Button $padding={8}>
             <Icon name="plus" size={24} />
           </Button>
-          <Typography size={16} $weight={500}>
+          <Typography $size={16} $weight={500}>
             Add Lesson Material
           </Typography>
         </Container>

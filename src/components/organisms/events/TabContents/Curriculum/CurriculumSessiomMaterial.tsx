@@ -32,15 +32,15 @@ const CurriculumSessionMaterial: React.FC<CurriculumSessiomMaterialProps> = ({
             size={32}
           />
         </IconBackground>
-        <Typography size={16} $weight={500}>
+        <Typography $size={16} $weight={500}>
           {material?.title}
         </Typography>
         {material?.isRequired && (
           <>
-            <Typography size={20} $weight={100} color="steelGray">
+            <Typography $size={20} $weight={100} $color="steelGray">
               |
             </Typography>
-            <Typography size={16} $weight={500} color="purple">
+            <Typography $size={16} $weight={500} $color="purple">
               Required
             </Typography>
           </>
@@ -48,26 +48,26 @@ const CurriculumSessionMaterial: React.FC<CurriculumSessiomMaterialProps> = ({
         {material?.isPreviewable && (
           <>
             <Icon name="dot" size={24} />
-            <Typography size={16} $weight={500} color="slateGray">
+            <Typography $size={16} $weight={500} $color="slateGray">
               Previewable
             </Typography>
           </>
         )}
         <Container display="flex" width="auto"></Container>
         <Icon name="time-circle" size={24} />
-        <Typography size={16} $weight={500}>
+        <Typography $size={16} $weight={500}>
           {date} | {time}
         </Typography>
         <Icon name="dot" size={24} />
         <Icon name="time-circle" size={24} />
-        <Typography size={16} $weight={500}>
+        <Typography $size={16} $weight={500}>
           {formatDuration(material?.duration)}
         </Typography>
         {material?.isDownloadable && (
           <>
             <Icon name="dot" size={24} />
             <Icon name="download" size={24} />
-            <Typography size={16} $weight={500}>
+            <Typography $size={16} $weight={500}>
               Downloadable
             </Typography>
           </>

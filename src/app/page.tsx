@@ -21,17 +21,19 @@ export default function Home() {
         $gap={8}
         $flexDirection="column"
       >
-        <Typography as="h1" size={32}>
+        <Typography as="h1" $size={32}>
           Welcome to Home Page
         </Typography>
-        <Typography color="slateGray">Created by Nandira Paturohman</Typography>
+        <Typography $color="slateGray">
+          Created by Nandira Paturohman
+        </Typography>
         <Typography>
           Source Code and Docs:{" "}
           <a
             href="https://github.com/nanpatur/edqt-frontend-test"
             target="_blank"
           >
-            <Typography color="purple">
+            <Typography $color="purple">
               https://github.com/nanpatur/edqt-frontend-test
             </Typography>
           </a>

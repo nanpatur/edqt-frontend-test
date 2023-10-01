@@ -1,14 +1,11 @@
 import { DividerStyled } from "./styled";
-import { DividerProps } from "./types";
+import { DividerProps, DividerStyledProps } from "./types";
 
-const Divider: React.FC<DividerProps> = (
-  props = { direction: "horizontal" },
-) => {
-  return <DividerStyled {...props} />;
-};
-
-Divider.defaultProps = {
-  direction: "horizontal",
+const Divider: React.FC<DividerProps> = ({ $direction = "horizontal" }) => {
+  const styledProps: DividerStyledProps = {
+    $direction,
+  };
+  return <DividerStyled {...styledProps} />;
 };
 
 export default Divider;
