@@ -15,7 +15,7 @@ const Header: React.FC<HeaderProps> = ({ title, withBack }) => {
     >
       {withBack && (
         <>
-          <IconLink href={withBack} name="left-arrow" size={24} />
+          <IconLink href={withBack} $name="left-arrow" $size={24} />
           <Divider $direction="vertical" />
         </>
       )}

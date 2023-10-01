@@ -15,7 +15,7 @@ const EventTitle: React.FC<EventTitleProps> = ({ title, subtitle }) => {
           {subtitle}
         </Typography>
       </Container>
-      <Button $variant="secondary" prefix={<Icon name="eye" size={24} />}>
+      <Button $variant="secondary" prefix={<Icon $name="eye" $size={24} />}>
         Preview
       </Button>
     </Container>

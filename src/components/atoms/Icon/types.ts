@@ -1,6 +1,6 @@
 export interface IconStyledProps {
-  size?: number;
-  name:
+  $size?: number;
+  $name:
     | "dot"
     | "download"
     | "edit"

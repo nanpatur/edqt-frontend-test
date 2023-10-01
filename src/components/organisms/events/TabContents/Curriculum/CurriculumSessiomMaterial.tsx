@@ -20,16 +20,16 @@ const CurriculumSessionMaterial: React.FC<CurriculumSessiomMaterialProps> = ({
     <MaterialContainer onDragOver={onDragOver} $isDragging={$isDragging}>
       <Container $display="flex" $alignItems="center" $gap={8}>
         <GrabIcon
-          name="drag-handle"
-          size={24}
+          $name="drag-handle"
+          $size={24}
           onDragStart={onDragStart}
           onDragEnd={onDragEnd}
           draggable={draggable}
         />
         <IconBackground>
           <Icon
-            name={material?.type === "online" ? "video" : "pin-location"}
-            size={32}
+            $name={material?.type === "online" ? "video" : "pin-location"}
+            $size={32}
           />
         </IconBackground>
         <Typography $size={16} $weight={500}>
@@ -47,32 +47,32 @@ const CurriculumSessionMaterial: React.FC<CurriculumSessiomMaterialProps> = ({
         )}
         {material?.isPreviewable && (
           <>
-            <Icon name="dot" size={24} />
+            <Icon $name="dot" $size={24} />
             <Typography $size={16} $weight={500} $color="slateGray">
               Previewable
             </Typography>
           </>
         )}
         <Container $display="flex" $width="auto"></Container>
-        <Icon name="time-circle" size={24} />
+        <Icon $name="time-circle" $size={24} />
         <Typography $size={16} $weight={500}>
           {date} | {time}
         </Typography>
-        <Icon name="dot" size={24} />
-        <Icon name="time-circle" size={24} />
+        <Icon $name="dot" $size={24} />
+        <Icon $name="time-circle" $size={24} />
         <Typography $size={16} $weight={500}>
           {formatDuration(material?.duration)}
         </Typography>
         {material?.isDownloadable && (
           <>
-            <Icon name="dot" size={24} />
-            <Icon name="download" size={24} />
+            <Icon $name="dot" $size={24} />
+            <Icon $name="download" $size={24} />
             <Typography $size={16} $weight={500}>
               Downloadable
             </Typography>
           </>
         )}
-        <Icon name="three-dot-v" size={32} />
+        <Icon $name="three-dot-v" $size={32} />
       </Container>
     </MaterialContainer>
   );

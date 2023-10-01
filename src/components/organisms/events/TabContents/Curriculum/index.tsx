@@ -65,7 +65,7 @@ const EventCurriculumTabContent: React.FC<EventCurriculumContentProps> = ({
         />
       ))}
       <Container $display="flex" $flexDirection="column" $alignItems="flex-end">
-        <Button $variant="primary" prefix={<Icon name="plus" size={24} />}>
+        <Button $variant="primary" prefix={<Icon $name="plus" $size={24} />}>
           Add Session
         </Button>
       </Container>

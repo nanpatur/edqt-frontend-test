@@ -46,8 +46,8 @@ const CurriculumSession: React.FC<CurriculumSessionProps> = ({
     >
       <Container $display="flex" $alignItems="center" $gap={8}>
         <GrabIcon
-          name="drag-handle"
-          size={24}
+          $name="drag-handle"
+          $size={24}
           onDragStart={onDragStart}
           onDragEnd={onDragEnd}
           draggable={draggable}
@@ -55,7 +55,7 @@ const CurriculumSession: React.FC<CurriculumSessionProps> = ({
         <Typography $size={24} $weight={500}>
           {session?.title}
         </Typography>
-        <Icon name="three-dot-h" size={32} style={{ marginLeft: "auto" }} />
+        <Icon $name="three-dot-h" $size={32} style={{ marginLeft: "auto" }} />
       </Container>
       <Container
         $padding={[24, 0, 0, 24]}
@@ -76,7 +76,7 @@ const CurriculumSession: React.FC<CurriculumSessionProps> = ({
         ))}
         <Container $display="flex" $alignItems="center" $gap={16}>
           <Button $padding={8}>
-            <Icon name="plus" size={24} />
+            <Icon $name="plus" $size={24} />
           </Button>
           <Typography $size={16} $weight={500}>
             Add Lesson Material
