@@ -1,14 +1,11 @@
 import Container from "@/components/atoms/Container";
 import Typography from "@/components/atoms/Typography";
 import styled from "styled-components";
+import { TabLabelStyledProps } from "./types";
 
 export const TabLabelContainerStyled = styled(Container)`
   border-bottom: 1px solid ${({ theme }) => theme.colors.cloudGray};
 `;
-
-interface TabLabelStyledProps {
-  $isActive: boolean;
-}
 
 export const TabLabelStyled = styled(Typography)<TabLabelStyledProps>`
   cursor: pointer;

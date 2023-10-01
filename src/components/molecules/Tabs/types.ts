@@ -9,3 +9,7 @@ export interface TabsProps {
   items: TabItemProps[];
   onChange?: (key: string) => void;
 }
+
+export interface TabLabelStyledProps {
+  $isActive: boolean;
+}
