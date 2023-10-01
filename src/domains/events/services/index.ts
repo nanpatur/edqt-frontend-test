@@ -58,6 +58,7 @@ export default class EventService {
       events[eventIndex] = event;
       localStorage.setItem("events", JSON.stringify(events));
       console.log("Services: update event success");
+      return event;
     } catch (error) {
       throw error;
     }

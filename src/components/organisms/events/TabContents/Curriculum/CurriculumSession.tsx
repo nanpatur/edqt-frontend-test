@@ -11,8 +11,11 @@ import Button from "@/components/atoms/Button";
 import Modal from "@/components/molecules/Modal";
 import CurriculumSessionMaterialModal from "./CurriculumSessionMaterialModal";
 import InputField from "@/components/atoms/InputField";
+import { useUpdateEvent } from "@/domains/events/hooks";
 
 const CurriculumSession: React.FC<CurriculumSessionProps> = ({
+  event,
+  updateEvent,
   session,
   onDragOver,
   onDragStart,
@@ -41,6 +44,23 @@ const CurriculumSession: React.FC<CurriculumSessionProps> = ({
   };
 
   const handleDragEnd = () => {
+    updateEvent({
+      ...event,
+      curriculum: {
+        ...event.curriculum,
+        sessions: [
+          ...event.curriculum.sessions.map((s) => {
+            if (s.id === session.id) {
+              return {
+                ...s,
+                materials,
+              };
+            }
+            return s;
+          }),
+        ],
+      },
+    });
     setDraggedMaterial(null);
   };
 

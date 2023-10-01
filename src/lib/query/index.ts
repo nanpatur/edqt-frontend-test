@@ -15,8 +15,6 @@ export const useQuery = <T>(
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState("");
 
-  const queryDependency = Array.isArray(key) ? key.join("") : key;
-
   useEffect(() => {
     const fetchData = async () => {
       setIsLoading(true);
@@ -31,22 +29,22 @@ export const useQuery = <T>(
     };
 
     !!config?.enabled && fetchData();
-  }, [config?.enabled, fetchFunction, queryDependency]);
+  }, [config?.enabled, Array.isArray(key) ? key.join("") : key]);
 
   return { data, isLoading, error };
 };
 
 export const useMutation = <T>(
-  fetchFunction: () => Promise<T>,
+  fetchFunction: (payload: T) => Promise<T>,
   config: MutationConfig<T>,
 ): MutationResult<T> => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
 
-  const mutate = async () => {
+  const mutate = async (payload: T) => {
     setIsLoading(true);
     try {
-      const result = await fetchFunction();
+      const result = await fetchFunction(payload);
       config?.onSuccess && config.onSuccess(result);
     } catch (err: any) {
       setError(err.message);

@@ -5,6 +5,8 @@ export interface CurriculumScheduleProps {
 }
 
 export interface CurriculumSessionProps {
+  event: Event;
+  updateEvent: (event: Event) => void;
   session: Session;
   onDragOver: (e: React.DragEvent<HTMLDivElement>) => void;
   onDragStart: (e: React.DragEvent<HTMLDivElement>) => void;
@@ -15,6 +17,7 @@ export interface CurriculumSessionProps {
 
 export interface EventCurriculumContentProps {
   event: Event;
+  updateEvent: (event: Event) => void;
 }
 
 export interface CurriculumSessiomMaterialProps {

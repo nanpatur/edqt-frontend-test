@@ -18,7 +18,7 @@ export interface QueryParams<T> {
 export interface MutationResult<T> {
   isLoading: boolean;
   error: string;
-  mutate: () => Promise<void>;
+  mutate: (payload: T) => Promise<void>;
 }
 
 export interface MutationConfig<T> {

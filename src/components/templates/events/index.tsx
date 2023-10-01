@@ -7,14 +7,26 @@ import { useMemo } from "react";
 import { TabItemProps } from "@/components/molecules/Tabs/types";
 import EventCurriculumTabContent from "@/components/organisms/events/TabContents/Curriculum";
 import { formatDate } from "@/utils/formatDate";
+import { useUpdateEvent } from "@/domains/events/hooks";
 
 const EventTemplate: React.FC<EventTemplateProps> = ({ event }) => {
+  const { mutate: updateEvent } = useUpdateEvent({
+    onSuccess: () => {
+      console.log("success");
+    },
+    onError: () => {
+      console.log("error");
+    },
+  });
+
   const items = useMemo<TabItemProps[]>(
     () => [
       {
         key: "1",
         label: "Curriculum",
-        content: <EventCurriculumTabContent event={event} />,
+        content: (
+          <EventCurriculumTabContent event={event} updateEvent={updateEvent} />
+        ),
       },
     ],
     [event],

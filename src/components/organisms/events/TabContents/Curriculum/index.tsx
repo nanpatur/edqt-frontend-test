@@ -9,6 +9,7 @@ import Icon from "@/components/atoms/Icon";
 
 const EventCurriculumTabContent: React.FC<EventCurriculumContentProps> = ({
   event,
+  updateEvent,
 }) => {
   const [sessions, setSessions] = useState(event?.curriculum?.sessions || []);
   const [draggedSession, setDraggedSession] = useState<Session | null>(null);
@@ -28,6 +29,13 @@ const EventCurriculumTabContent: React.FC<EventCurriculumContentProps> = ({
   };
 
   const handleDragEnd = () => {
+    updateEvent({
+      ...event,
+      curriculum: {
+        ...event.curriculum,
+        sessions,
+      },
+    });
     setDraggedSession(null);
   };
 
@@ -42,6 +50,8 @@ const EventCurriculumTabContent: React.FC<EventCurriculumContentProps> = ({
       {sessions.map((session, index) => (
         <CurriculumSession
           key={index}
+          event={event}
+          updateEvent={updateEvent}
           session={session}
           onDragOver={() => handleDragOver(index)}
           onDragStart={() => handleDragStart(session)}
