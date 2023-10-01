@@ -2,7 +2,8 @@ import styled from "styled-components";
 import { ContainerStyledProps } from "./types";
 
 export const ContainerStyled = styled.div<ContainerStyledProps>`
-  width: 100%;
+  width: ${({ width }) => width || "100%"};
+  max-width: ${({ maxWidth }) => maxWidth || "1440px"};
   margin: 0 auto;
   padding: ${({ padding }) =>
     Array.isArray(padding)

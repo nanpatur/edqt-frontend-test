@@ -27,9 +27,15 @@ const EventTemplate: React.FC<EventTemplateProps> = ({ event }) => {
   }, [event.updatedAt]);
 
   return (
-    <Container>
+    <Container maxWidth="100%">
       <Header title="Event" withBack="/" />
-      <Container padding={40} display="flex" flexDirection="column" gap={32}>
+      <Container
+        padding={40}
+        display="flex"
+        flexDirection="column"
+        gap={32}
+        background="transparent"
+      >
         <EventTitle title={event.title} subtitle={formattedLastEdited} />
         <Tabs defaultActiveKey="1" items={items} />
       </Container>

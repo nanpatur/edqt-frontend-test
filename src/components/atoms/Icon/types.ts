@@ -1,6 +1,6 @@
 export interface IconStyledProps {
   size?: number;
-  icon:
+  name:
     | "dot"
     | "download"
     | "edit"
@@ -9,7 +9,12 @@ export interface IconStyledProps {
     | "pin-location"
     | "plus"
     | "time-circle"
-    | "video";
+    | "video"
+    | "drag-handle"
+    | "three-dot-v"
+    | "three-dot-h";
 }
 
-export interface IconProps extends IconStyledProps {}
+export interface IconProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    IconStyledProps {}

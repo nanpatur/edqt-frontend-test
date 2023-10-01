@@ -2,10 +2,10 @@ import Icon from "@/components/atoms/Icon";
 import Link from "next/link";
 import { IconLinkProps } from "./types";
 
-const IconLink: React.FC<IconLinkProps> = ({ icon, size, href }) => {
+const IconLink: React.FC<IconLinkProps> = ({ name: icon, size, href }) => {
   return (
     <Link href={href}>
-      <Icon icon={icon} size={size} />
+      <Icon name={icon} size={size} />
     </Link>
   );
 };

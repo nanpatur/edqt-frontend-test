@@ -9,6 +9,7 @@ const myTheme: DefaultTheme = {
     steelGray: "#BCC0D0",
     cloudGray: "#DFE5EE",
     frostGray: "#F6F8FC",
+    paleGray: "#FBFAFF",
   },
 };
 

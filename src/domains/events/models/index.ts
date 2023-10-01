@@ -5,11 +5,17 @@ export interface Material {
   url: string;
   isRequired: boolean;
   startDate: string;
-  durationInMinutes: number;
+  duration: {
+    hours: number;
+    minutes: number;
+    seconds: number;
+  };
   isDownloadable: boolean;
+  isPreviewable: boolean;
 }
 
 export interface Session {
+  id: string;
   title: string;
   materials: Material[];
 }
