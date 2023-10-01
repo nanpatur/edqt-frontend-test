@@ -25,3 +25,10 @@ export interface CurriculumSessiomMaterialProps {
   draggable: boolean;
   $isDragging: boolean;
 }
+
+export interface CurriculumSessionMaterialModalProps {
+  isOpen: boolean;
+  onOK: (values?: any) => void;
+  onCancel: () => void;
+  session: Session;
+}

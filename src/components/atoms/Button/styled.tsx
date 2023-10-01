@@ -24,4 +24,10 @@ export const ButtonStyled = styled.button<ButtonStyledProps>`
         ? $padding.map((p) => String(p) + "px").join(" ")
         : `${$padding}px` || "0"
       : "10px 16px"};
+  &:disabled {
+    cursor: not-allowed;
+    background-color: ${({ theme }) => theme.colors.cloudGray};
+    color: ${({ theme }) => theme.colors.steelGray};
+    border: none;
+  }
 `;

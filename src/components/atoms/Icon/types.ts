@@ -12,7 +12,9 @@ export interface IconStyledProps {
     | "video"
     | "drag-handle"
     | "three-dot-v"
-    | "three-dot-h";
+    | "three-dot-h"
+    | "check"
+    | "cross";
   $cursor?: string;
   $activeCursor?: string;
 }

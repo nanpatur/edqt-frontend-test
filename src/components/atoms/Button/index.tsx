@@ -5,17 +5,23 @@ const Button: React.FC<ButtonProps> = ({
   children,
   prefix,
   suffix,
+  onClick,
   $variant = "primary",
   $padding,
-  $disabled,
+  disabled,
 }) => {
   const styledProps: ButtonStyledProps = {
     $variant,
     $padding,
-    $disabled,
+    disabled,
   };
+
+  const handleOnClick = () => {
+    onClick && onClick();
+  };
+
   return (
-    <ButtonStyled {...styledProps}>
+    <ButtonStyled onClick={handleOnClick} {...styledProps}>
       {prefix}
       {children}
       {suffix}
