@@ -3,15 +3,12 @@ import { CurriculumSessionProps } from "./types";
 import Container from "@/components/atoms/Container";
 import Typography from "@/components/atoms/Typography";
 import Icon from "@/components/atoms/Icon";
-import styled from "styled-components";
 import CurriculumSessionMaterial from "./CurriculumSessionMaterial";
-import { useState } from "react";
-import { Material } from "@/domains/events/models";
+import { useState, useEffect } from "react";
+import { Event, Material, Session } from "@/domains/events/models";
 import Button from "@/components/atoms/Button";
-import Modal from "@/components/molecules/Modal";
 import CurriculumSessionMaterialModal from "./CurriculumSessionMaterialModal";
 import InputField from "@/components/atoms/InputField";
-import { useUpdateEvent } from "@/domains/events/hooks";
 
 const CurriculumSession: React.FC<CurriculumSessionProps> = ({
   event,
@@ -23,51 +20,113 @@ const CurriculumSession: React.FC<CurriculumSessionProps> = ({
   draggable,
   $isDragging,
 }) => {
+  const [sessionTemp, setSessionTemp] = useState<Session>(session);
   const [materials, setMaterials] = useState(session?.materials || []);
   const [draggedMaterial, setDraggedMaterial] = useState<Material | null>(null);
   const [isModalMaterialOpen, setIsModalMaterialOpen] =
     useState<boolean>(false);
-  const [editTitle, setEditTitle] = useState<boolean>(false);
+  const [editTitle, setEditTitle] = useState<string | undefined>(undefined);
 
-  const handleDragStart = (session: Material) => {
-    setDraggedMaterial(session);
+  useEffect(() => {
+    if (session.id !== sessionTemp.id) {
+      setSessionTemp(session);
+      setMaterials(session?.materials || []);
+    }
+  }, [session]);
+
+  const handleDragStart = (material: Material) => {
+    setDraggedMaterial(material);
   };
 
   const handleDragOver = (index: number) => {
     if (!draggedMaterial) return;
 
     const newMaterials = [
-      ...materials.filter((session) => session.id !== draggedMaterial.id),
+      ...materials.filter((material) => material.id !== draggedMaterial.id),
     ];
     newMaterials.splice(index, 0, draggedMaterial);
     setMaterials(newMaterials);
   };
 
-  const handleDragEnd = () => {
-    updateEvent({
-      ...event,
-      curriculum: {
-        ...event.curriculum,
-        sessions: [
-          ...event.curriculum.sessions.map((s) => {
-            if (s.id === session.id) {
-              return {
-                ...s,
-                materials,
-              };
-            }
-            return s;
-          }),
-        ],
-      },
-    });
-    setDraggedMaterial(null);
+  const handleUpdateEvent = (payload: Event, callback: () => void) => {
+    updateEvent(payload);
+    callback();
   };
 
-  const handleModalSubmit = (material: Material) => {
-    setMaterials((prevMaterials) => [...prevMaterials, material]);
-    setIsModalMaterialOpen(false);
-  };
+  const handleDragEnd = () =>
+    handleUpdateEvent(
+      {
+        ...event,
+        curriculum: {
+          ...event.curriculum,
+          sessions: [
+            ...event.curriculum.sessions.map((s) => {
+              if (s.id === sessionTemp.id) {
+                return {
+                  ...s,
+                  materials,
+                };
+              }
+              return s;
+            }),
+          ],
+        },
+      },
+      () => setDraggedMaterial(null),
+    );
+
+  const handleEditTitle = () =>
+    handleUpdateEvent(
+      {
+        ...event,
+        curriculum: {
+          ...event.curriculum,
+          sessions: [
+            ...event.curriculum.sessions.map((s) => {
+              if (s.id === sessionTemp.id) {
+                return {
+                  ...s,
+                  title: editTitle || "",
+                };
+              }
+              return s;
+            }),
+          ],
+        },
+      },
+      () => {
+        setSessionTemp({
+          ...sessionTemp,
+          title: editTitle || "",
+        });
+        setEditTitle(undefined);
+      },
+    );
+
+  const handleModalSubmit = (material: Material) =>
+    handleUpdateEvent(
+      {
+        ...event,
+        curriculum: {
+          ...event.curriculum,
+          sessions: [
+            ...event.curriculum.sessions.map((s) => {
+              if (s.id === sessionTemp.id) {
+                return {
+                  ...s,
+                  materials: [...s.materials, material],
+                };
+              }
+              return s;
+            }),
+          ],
+        },
+      },
+      () => {
+        setMaterials((prevMaterials) => [...prevMaterials, material]);
+        setIsModalMaterialOpen(false);
+      },
+    );
 
   return (
     <>
@@ -91,29 +150,30 @@ const CurriculumSession: React.FC<CurriculumSessionProps> = ({
               <>
                 <InputField
                   type="text"
-                  value={session?.title}
+                  value={editTitle}
                   $width="fit-content"
+                  onChange={({ target }) => {
+                    setEditTitle(target.value);
+                  }}
                 />
                 <Icon
                   $name="cross"
                   $size={24}
-                  onClick={() => setEditTitle(false)}
+                  onClick={() => {
+                    setEditTitle(undefined);
+                  }}
                 />
-                <Icon
-                  $name="check"
-                  $size={20}
-                  onClick={() => setEditTitle(false)}
-                />
+                <Icon $name="check" $size={20} onClick={handleEditTitle} />
               </>
             ) : (
               <>
                 <Typography $size={24} $weight={500}>
-                  {session?.title}
+                  {sessionTemp?.title}
                 </Typography>
                 <Icon
                   $name="edit"
                   $size={20}
-                  onClick={() => setEditTitle(true)}
+                  onClick={() => setEditTitle(sessionTemp?.title)}
                 />
               </>
             )}

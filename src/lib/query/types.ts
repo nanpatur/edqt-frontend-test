@@ -2,6 +2,7 @@ export interface QueryResult<T> {
   data: T | null;
   isLoading: boolean;
   error: string;
+  refetch: () => void;
 }
 
 export interface QueryConfig<T> {

@@ -9,7 +9,10 @@ import EventCurriculumTabContent from "@/components/organisms/events/TabContents
 import { formatDate } from "@/utils/formatDate";
 import { useUpdateEvent } from "@/domains/events/hooks";
 
-const EventTemplate: React.FC<EventTemplateProps> = ({ event }) => {
+const EventTemplate: React.FC<EventTemplateProps> = ({
+  event,
+  refetchEvent,
+}) => {
   const { mutate: updateEvent } = useUpdateEvent({
     onSuccess: () => {
       console.log("success");
@@ -25,7 +28,11 @@ const EventTemplate: React.FC<EventTemplateProps> = ({ event }) => {
         key: "1",
         label: "Curriculum",
         content: (
-          <EventCurriculumTabContent event={event} updateEvent={updateEvent} />
+          <EventCurriculumTabContent
+            event={event}
+            updateEvent={updateEvent}
+            refetchEvent={refetchEvent}
+          />
         ),
       },
     ],

@@ -14,6 +14,13 @@ export const useQuery = <T>(
   const [data, setData] = useState<T | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState("");
+  const refetch = () => {
+    setIsLoading(true);
+    fetchFunction().then((result) => {
+      setData(result);
+      setIsLoading(false);
+    });
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -31,7 +38,7 @@ export const useQuery = <T>(
     !!config?.enabled && fetchData();
   }, [config?.enabled, Array.isArray(key) ? key.join("") : key]);
 
-  return { data, isLoading, error };
+  return { data, isLoading, error, refetch };
 };
 
 export const useMutation = <T>(

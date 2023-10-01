@@ -18,6 +18,7 @@ export interface CurriculumSessionProps {
 export interface EventCurriculumContentProps {
   event: Event;
   updateEvent: (event: Event) => void;
+  refetchEvent: () => void;
 }
 
 export interface CurriculumSessiomMaterialProps {

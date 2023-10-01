@@ -9,6 +9,6 @@ const EventTemplate = dynamic(() => import("@/components/templates/events"), {
 });
 
 export default function EventPage() {
-  const { data: event } = useGetEvent("1");
-  return <EventTemplate event={event} />;
+  const { data: event, refetch: refetchEvent } = useGetEvent("1");
+  return <EventTemplate event={event} refetchEvent={refetchEvent} />;
 }
