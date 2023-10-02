@@ -45,7 +45,7 @@ const EventTemplate: React.FC<EventTemplateProps> = ({
     if (!event.updatedAt) return "";
     const { date, time } = formatDate(event.updatedAt);
     return `Last edited ${date} | ${time}`;
-  }, [event.updatedAt]);
+  }, [event?.updatedAt]);
 
   return (
     <Container $maxWidth="100%">

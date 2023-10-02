@@ -206,7 +206,6 @@ const CurriculumSessionMaterialModal: React.FC<
           />
         </Container>
       </form>
-      <p>is valid: {String(isFormValid)}</p>
     </Modal>
   );
 };
