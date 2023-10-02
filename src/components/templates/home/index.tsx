@@ -21,11 +21,9 @@ const HomeTemplate = () => {
         $flexDirection="column"
       >
         <Typography as="h1" $size={32}>
-          Welcome to Home Page
+          Welcome to Assestment Task Eduqat <b>Result</b>
         </Typography>
-        <Typography $color="slateGray">
-          Created by Nandira Paturohman
-        </Typography>
+        <Typography>Created by Nandira Paturohman</Typography>
         <Typography>
           Source Code and Docs:{" "}
           <a
