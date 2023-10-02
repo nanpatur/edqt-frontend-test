@@ -1,20 +1,21 @@
-"use client";
-import { myTheme } from "../styles/theme";
+import RootWrapper from "@/components/templates/root";
 import "./globals.css";
-import { ThemeProvider } from "styled-components";
-import { useSetInitialEventData } from "@/domains/events/hooks";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Eduqat - Home",
+  description: "Eduqat - Home",
+};
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  useSetInitialEventData();
-
   return (
     <html lang="en">
       <body suppressHydrationWarning={true}>
-        <ThemeProvider theme={myTheme}>{children}</ThemeProvider>
+        <RootWrapper>{children}</RootWrapper>
       </body>
     </html>
   );

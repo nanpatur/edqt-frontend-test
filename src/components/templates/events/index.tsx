@@ -1,3 +1,4 @@
+"use client";
 import Container from "@/components/atoms/Container";
 import Header from "@/components/molecules/Header";
 import EventTitle from "@/components/organisms/events/Title";

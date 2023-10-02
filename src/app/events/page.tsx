@@ -1,6 +1,6 @@
 "use client";
 import dynamic from "next/dynamic";
-import { useGetEvent } from "@/domains/events/hooks";
+import { useGetEvent, useSetInitialEventData } from "@/domains/events/hooks";
 
 const EventTemplate = dynamic(() => import("@/components/templates/events"), {
   ssr: false,

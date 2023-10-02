@@ -1,4 +1,5 @@
-import { DefaultTheme } from "styled-components";
+"use client";
+import { DefaultTheme, ThemeProvider } from "styled-components";
 
 const myTheme: DefaultTheme = {
   colors: {
@@ -13,4 +14,8 @@ const myTheme: DefaultTheme = {
   },
 };
 
-export { myTheme };
+const ThemeClient = ({ children }: { children: React.ReactNode }) => {
+  return <ThemeProvider theme={myTheme}>{children}</ThemeProvider>;
+};
+
+export default ThemeClient;
