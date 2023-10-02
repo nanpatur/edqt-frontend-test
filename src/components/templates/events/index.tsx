@@ -9,6 +9,7 @@ import { TabItemProps } from "@/components/molecules/Tabs/types";
 import EventCurriculumTabContent from "@/components/organisms/events/TabContents/Curriculum";
 import { formatDate } from "@/utils/formatDate";
 import { useUpdateEvent } from "@/domains/events/hooks";
+import Typography from "@/components/atoms/Typography";
 
 const EventTemplate: React.FC<EventTemplateProps> = ({
   event,
@@ -61,7 +62,7 @@ const EventTemplate: React.FC<EventTemplateProps> = ({
           $alignItems="center"
           $background="transparent"
         >
-          Loading...
+          <Typography>Loading...</Typography>
         </Container>
       )}
       {event && (
