@@ -66,11 +66,11 @@ const CurriculumSessionMaterialModal: React.FC<
       !!(
         formData.title &&
         formData.startDate &&
-        formData.duration.hours &&
+        !Number.isNaN(formData.duration.hours) &&
         formData.duration.hours >= 0 &&
-        formData.duration.minutes &&
+        !Number.isNaN(formData.duration.minutes) &&
         formData.duration.minutes >= 0 &&
-        formData.duration.seconds &&
+        !Number.isNaN(formData.duration.seconds) &&
         formData.duration.seconds >= 0
       ),
     [
