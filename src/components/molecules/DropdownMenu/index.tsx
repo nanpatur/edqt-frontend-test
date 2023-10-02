@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import Container from "../../atoms/Container";
 import {
   DropdownMenuContainerStyled,
@@ -21,6 +21,7 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({
   items,
   onSelect,
 }) => {
+  const ref = useRef(null);
   const [isOpen, setIsOpen] = useState(false);
 
   const handleSelect = (item: string) => {
@@ -28,9 +29,22 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({
     setIsOpen(false);
   };
 
+  const handleClickOutside = (event: MouseEvent) => {
+    if (ref.current && !(ref.current as any).contains(event.target)) {
+      setIsOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("click", handleClickOutside);
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
+
   return (
     <Container $width="fit-content" style={{ margin: 0 }}>
-      <DropdownMenuContainerStyled>
+      <DropdownMenuContainerStyled ref={ref}>
         <DropdownMenuTriggerStyled onClick={() => setIsOpen((prev) => !prev)}>
           {children}
         </DropdownMenuTriggerStyled>
