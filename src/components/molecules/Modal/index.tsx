@@ -1,6 +1,4 @@
-import { useState } from "react";
 import { ModalProps } from "./types";
-import Container from "@/components/atoms/Container";
 import Button from "@/components/atoms/Button";
 import {
   ModalContainerStyled,
@@ -27,7 +25,6 @@ const Modal: React.FC<ModalProps> = ({
     isOpen && (
       <ModalContainerStyled>
         <ModalStyled>
-          {/* header */}
           <ModalHeaderStyled>
             <Typography $size={18} $weight={600}>
               {title || "Modal"}
@@ -38,9 +35,7 @@ const Modal: React.FC<ModalProps> = ({
               </Typography>
             )}
           </ModalHeaderStyled>
-          {/* content */}
           <ModalContentStyled>{children}</ModalContentStyled>
-          {/* footer */}
           <ModalFooterStyled>
             <Button
               onClick={onCancel}

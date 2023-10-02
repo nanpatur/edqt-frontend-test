@@ -2,7 +2,6 @@ import Modal from "@/components/molecules/Modal";
 import { CurriculumSessionMaterialModalProps } from "./types";
 import { useState, useMemo } from "react";
 import InputField from "@/components/atoms/InputField";
-import Typography from "@/components/atoms/Typography";
 import Container from "@/components/atoms/Container";
 import Input from "@/components/molecules/Input";
 import { generateRandomString } from "@/utils/generateRandomString";

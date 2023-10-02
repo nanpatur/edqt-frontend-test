@@ -1,5 +1,4 @@
 import Container from "@/components/atoms/Container";
-import Typography from "@/components/atoms/Typography";
 import styled from "styled-components";
 
 export const TabLabelContainerStyled = styled(Container)`
