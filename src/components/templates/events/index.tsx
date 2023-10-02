@@ -42,24 +42,26 @@ const EventTemplate: React.FC<EventTemplateProps> = ({
   );
 
   const formattedLastEdited = useMemo(() => {
-    if (!event.updatedAt) return "";
-    const { date, time } = formatDate(event.updatedAt);
+    if (!event?.updatedAt) return "";
+    const { date, time } = formatDate(event?.updatedAt);
     return `Last edited ${date} | ${time}`;
   }, [event?.updatedAt]);
 
   return (
     <Container $maxWidth="100%">
       <Header title="Event" withBack="/" />
-      <Container
-        $padding={40}
-        $display="flex"
-        $flexDirection="column"
-        $gap={32}
-        $background="transparent"
-      >
-        <EventTitle title={event.title} subtitle={formattedLastEdited} />
-        <Tabs defaultActiveKey="1" items={items} />
-      </Container>
+      {event && (
+        <Container
+          $padding={40}
+          $display="flex"
+          $flexDirection="column"
+          $gap={32}
+          $background="transparent"
+        >
+          <EventTitle title={event.title} subtitle={formattedLastEdited} />
+          <Tabs defaultActiveKey="1" items={items} />
+        </Container>
+      )}
     </Container>
   );
 };
