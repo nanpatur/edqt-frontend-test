@@ -5,7 +5,7 @@ import { formatDate } from "@/utils/formatDate";
 import { formatDuration } from "@/utils/formatDuration";
 import styled from "styled-components";
 import { CurriculumSessiomMaterialProps } from "./types";
-import DropdownMenu from "@/components/atoms/DropdownMenu";
+import DropdownMenu from "@/components/molecules/DropdownMenu";
 
 const CurriculumSessionMaterial: React.FC<CurriculumSessiomMaterialProps> = ({
   material,

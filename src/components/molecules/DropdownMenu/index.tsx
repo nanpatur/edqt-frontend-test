@@ -1,12 +1,12 @@
 import { useState } from "react";
-import Container from "../Container";
+import Container from "../../atoms/Container";
 import {
   DropdownMenuContainerStyled,
   DropdownMenuItemStyled,
   DropdownMenuItemsContainerStyled,
   DropdownMenuTriggerStyled,
 } from "./styled";
-import Typography from "../Typography";
+import Typography from "../../atoms/Typography";
 
 interface DropdownMenuProps extends React.PropsWithChildren {
   items: {

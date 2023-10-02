@@ -9,7 +9,7 @@ import { Event, Material, Session } from "@/domains/events/models";
 import Button from "@/components/atoms/Button";
 import CurriculumSessionMaterialModal from "./CurriculumSessionMaterialModal";
 import InputField from "@/components/atoms/InputField";
-import DropdownMenu from "@/components/atoms/DropdownMenu";
+import DropdownMenu from "@/components/molecules/DropdownMenu";
 
 const CurriculumSession: React.FC<CurriculumSessionProps> = ({
   event,
@@ -131,7 +131,6 @@ const CurriculumSession: React.FC<CurriculumSessionProps> = ({
     );
 
   const handleDeleteMaterial = async (materialId: string) => {
-    // alert confirmation
     const isConfirm = await window.confirm(
       "Are you sure you want to delete this material?",
     );
