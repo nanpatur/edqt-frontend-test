@@ -13,6 +13,7 @@ import { useUpdateEvent } from "@/domains/events/hooks";
 const EventTemplate: React.FC<EventTemplateProps> = ({
   event,
   refetchEvent,
+  isLoadingEvent,
 }) => {
   const { mutate: updateEvent } = useUpdateEvent({
     onSuccess: () => {
@@ -52,6 +53,17 @@ const EventTemplate: React.FC<EventTemplateProps> = ({
   return (
     <Container $maxWidth="100%">
       <Header title="Event" withBack="/" />
+      {isLoadingEvent && (
+        <Container
+          $padding={40}
+          $display="flex"
+          $flexDirection="column"
+          $alignItems="center"
+          $background="transparent"
+        >
+          Loading...
+        </Container>
+      )}
       {event && (
         <Container
           $padding={40}

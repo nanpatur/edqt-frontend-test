@@ -32,6 +32,7 @@ export default class EventService {
       const events = JSON.parse(localStorage.getItem("events") || "[]");
       const event = events.find((event: Event) => event.id === id);
       console.log("Services: get event success");
+      await new Promise((resolve) => setTimeout(resolve, 1000));
       return event;
     } catch (error) {
       throw error;
