@@ -29,7 +29,7 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({
   };
 
   return (
-    <Container $width="fit-content">
+    <Container $width="fit-content" style={{ margin: 0 }}>
       <DropdownMenuContainerStyled>
         <DropdownMenuTriggerStyled onClick={() => setIsOpen((prev) => !prev)}>
           {children}

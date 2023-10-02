@@ -5,6 +5,7 @@ import { formatDate } from "@/utils/formatDate";
 import { formatDuration } from "@/utils/formatDuration";
 import styled from "styled-components";
 import { CurriculumSessiomMaterialProps } from "./types";
+import DropdownMenu from "@/components/atoms/DropdownMenu";
 
 const CurriculumSessionMaterial: React.FC<CurriculumSessiomMaterialProps> = ({
   material,
@@ -13,6 +14,7 @@ const CurriculumSessionMaterial: React.FC<CurriculumSessiomMaterialProps> = ({
   onDragEnd,
   draggable,
   $isDragging,
+  handleDeleteMaterial,
 }) => {
   const { date, time } = formatDate(material?.startDate);
 
@@ -75,7 +77,22 @@ const CurriculumSessionMaterial: React.FC<CurriculumSessiomMaterialProps> = ({
             </Typography>
           </>
         )}
-        <Icon $name="three-dot-v" $size={32} />
+        <DropdownMenu
+          items={[{ key: "delete", label: "Delete" }]}
+          onSelect={(key) => {
+            switch (key) {
+              case "delete":
+                handleDeleteMaterial(material.id);
+                break;
+            }
+          }}
+        >
+          <Icon
+            $name="three-dot-h"
+            $size={32}
+            onClick={(e) => e.preventDefault()}
+          />
+        </DropdownMenu>
       </Container>
     </MaterialContainer>
   );

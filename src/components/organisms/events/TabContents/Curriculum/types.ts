@@ -29,6 +29,7 @@ export interface CurriculumSessiomMaterialProps {
   onDragEnd: (e: React.DragEvent<HTMLDivElement>) => void;
   draggable: boolean;
   $isDragging: boolean;
+  handleDeleteMaterial: (materialId: string) => void;
 }
 
 export interface CurriculumSessionMaterialModalProps {

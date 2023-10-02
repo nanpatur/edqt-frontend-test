@@ -130,6 +130,37 @@ const CurriculumSession: React.FC<CurriculumSessionProps> = ({
       },
     );
 
+  const handleDeleteMaterial = async (materialId: string) => {
+    // alert confirmation
+    const isConfirm = await window.confirm(
+      "Are you sure you want to delete this material?",
+    );
+    if (!isConfirm) return;
+    const newMaterials = materials.filter(
+      (material) => material.id !== materialId,
+    );
+    handleUpdateEvent(
+      {
+        ...event,
+        curriculum: {
+          ...event.curriculum,
+          sessions: [
+            ...event.curriculum.sessions.map((s) => {
+              if (s.id === sessionTemp.id) {
+                return {
+                  ...s,
+                  materials: newMaterials,
+                };
+              }
+              return s;
+            }),
+          ],
+        },
+      },
+      () => setMaterials(newMaterials),
+    );
+  };
+
   return (
     <>
       <Card
@@ -213,6 +244,7 @@ const CurriculumSession: React.FC<CurriculumSessionProps> = ({
               onDragEnd={handleDragEnd}
               draggable
               $isDragging={material.id === draggedMaterial?.id}
+              handleDeleteMaterial={handleDeleteMaterial}
             />
           ))}
           <Container $display="flex" $alignItems="center" $gap={16}>

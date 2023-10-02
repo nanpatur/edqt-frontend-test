@@ -56,7 +56,11 @@ const EventCurriculumTabContent: React.FC<EventCurriculumContentProps> = ({
     setSessions([...sessions, newSession]);
   };
 
-  const handleDeleteSession = (sessionId: string) => {
+  const handleDeleteSession = async (sessionId: string) => {
+    const isConfirm = await window.confirm(
+      "Are you sure you want to delete this session?",
+    );
+    if (!isConfirm) return;
     const newSessions = sessions.filter((session) => session.id !== sessionId);
     updateEvent({
       ...event,
