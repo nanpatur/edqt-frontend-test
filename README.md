@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This project is a Next.js application for [brief description of the project].
 
-## Getting Started
+## Table of Contents
 
-First, run the development server:
+1. [Installation](#installation)
+2. [Usage](#usage)
+3. [Configuration](#configuration)
+4. [Scripts](#scripts)
+5. [Dependencies](#dependencies)
+6. [Dev Dependencies](#dev-dependencies)
+7. [Linting and Formatting](#linting-and-formatting)
+8. [Resolutions](#resolutions)
+
+## Installation
+
+To install the project dependencies, run the following command:
+
+```bash
+npm install
+```
+
+## Usage
+
+To run the development server, use:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+To build the project, use:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+To start the production server, use:
 
-## Learn More
+```bash
+npm start
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Configuration
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `private`: This project is marked as private.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Scripts
 
-## Deploy on Vercel
+- `dev`: Run the development server using `next dev`.
+- `build`: Build the project using `next build`.
+- `start`: Start the production server using `next start`.
+- `lint`: Run linting using `next lint`.
+- `prepare`: Install Husky using `husky install`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Dependencies
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- `next`: Latest version - The Next.js framework for building React applications.
+- `react`: Latest version - The React library for building user interfaces.
+- `react-dom`: Latest version - Provides DOM-specific methods that can be used at the top level of a web app.
+- `styled-components`: ^6.0.8 - A popular CSS-in-JS library for styling React components.
+
+## Dev Dependencies
+
+- `@types/node`: Latest version - TypeScript types for Node.js.
+- `@types/react`: Latest version - TypeScript types for React.
+- `@types/react-dom`: Latest version - TypeScript types for React DOM.
+- `eslint`: Latest version - A tool for identifying and fixing code style issues.
+- `eslint-config-next`: Latest version - ESLint configuration specific to Next.js projects.
+- `eslint-config-prettier`: ^9.0.0 - ESLint rules for Prettier integration.
+- `husky`: ^8.0.3 - A tool to easily set up Git hooks.
+- `lint-staged`: ^14.0.1 - Run linters on pre-committed files in Git.
+- `prettier`: 3.0.3 - An opinionated code formatter.
+- `typescript`: Latest version - A superset of JavaScript that adds static types to the language.
+
+## Linting and Formatting
+
+The project uses ESLint for linting and Prettier for code formatting. Husky and lint-staged are set up to ensure that code is properly formatted before commits.
