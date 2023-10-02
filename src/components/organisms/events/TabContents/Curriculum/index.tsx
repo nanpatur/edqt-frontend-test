@@ -56,6 +56,18 @@ const EventCurriculumTabContent: React.FC<EventCurriculumContentProps> = ({
     setSessions([...sessions, newSession]);
   };
 
+  const handleDeleteSession = (sessionId: string) => {
+    const newSessions = sessions.filter((session) => session.id !== sessionId);
+    updateEvent({
+      ...event,
+      curriculum: {
+        ...event.curriculum,
+        sessions: newSessions,
+      },
+    });
+    setSessions(newSessions);
+  };
+
   return (
     <Container
       $padding={[32, 0]}
@@ -75,6 +87,7 @@ const EventCurriculumTabContent: React.FC<EventCurriculumContentProps> = ({
           onDragEnd={handleDragEnd}
           draggable
           $isDragging={session.id === draggedSession?.id}
+          handleDeleteSession={handleDeleteSession}
         />
       ))}
       <Container $display="flex" $flexDirection="column" $alignItems="flex-end">

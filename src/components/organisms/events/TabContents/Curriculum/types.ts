@@ -13,6 +13,7 @@ export interface CurriculumSessionProps {
   onDragEnd: (e: React.DragEvent<HTMLDivElement>) => void;
   draggable: boolean;
   $isDragging: boolean;
+  handleDeleteSession: (sessionId: string) => void;
 }
 
 export interface EventCurriculumContentProps {

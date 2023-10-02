@@ -9,6 +9,7 @@ import { Event, Material, Session } from "@/domains/events/models";
 import Button from "@/components/atoms/Button";
 import CurriculumSessionMaterialModal from "./CurriculumSessionMaterialModal";
 import InputField from "@/components/atoms/InputField";
+import DropdownMenu from "@/components/atoms/DropdownMenu";
 
 const CurriculumSession: React.FC<CurriculumSessionProps> = ({
   event,
@@ -19,6 +20,7 @@ const CurriculumSession: React.FC<CurriculumSessionProps> = ({
   onDragEnd,
   draggable,
   $isDragging,
+  handleDeleteSession,
 }) => {
   const [sessionTemp, setSessionTemp] = useState<Session>(session);
   const [materials, setMaterials] = useState(session?.materials || []);
@@ -178,7 +180,23 @@ const CurriculumSession: React.FC<CurriculumSessionProps> = ({
               </>
             )}
           </Container>
-          <Icon $name="three-dot-h" $size={32} style={{ marginLeft: "auto" }} />
+          <DropdownMenu
+            items={[{ key: "delete", label: "Delete" }]}
+            onSelect={(key) => {
+              switch (key) {
+                case "delete":
+                  handleDeleteSession(session.id);
+                  break;
+              }
+            }}
+          >
+            <Icon
+              $name="three-dot-h"
+              $size={32}
+              style={{ marginLeft: "auto" }}
+              onClick={(e) => e.preventDefault()}
+            />
+          </DropdownMenu>
         </Container>
         <Container
           $padding={[24, 0, 0, 24]}
