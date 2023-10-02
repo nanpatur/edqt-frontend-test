@@ -1,4 +1,4 @@
-This project is a Next.js application for [brief description of the project].
+This project is a Next.js application for the Assestment Task Eduqat - Front End Engineer.
 
 ## Table of Contents
 
