@@ -16,7 +16,9 @@ const EventTemplate: React.FC<EventTemplateProps> = ({
 }) => {
   const { mutate: updateEvent } = useUpdateEvent({
     onSuccess: () => {
-      alert("Succesfully updated event");
+      setTimeout(() => {
+        alert("Succesfully updated event");
+      }, 500);
     },
     onError: (message) => {
       alert(message);
