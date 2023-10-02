@@ -1,6 +1,4 @@
 "use client";
-import { Event } from "@/domains/events/models";
-import exampleEvent from "./example.json";
 import dynamic from "next/dynamic";
 import { useGetEvent } from "@/domains/events/hooks";
 

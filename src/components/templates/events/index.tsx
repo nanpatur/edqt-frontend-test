@@ -15,10 +15,11 @@ const EventTemplate: React.FC<EventTemplateProps> = ({
 }) => {
   const { mutate: updateEvent } = useUpdateEvent({
     onSuccess: () => {
-      console.log("success");
+      alert("Succesfully updated event");
     },
-    onError: () => {
-      console.log("error");
+    onError: (message) => {
+      alert(message);
+      console.error(message);
     },
   });
 
